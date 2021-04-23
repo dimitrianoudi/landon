@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Test AWS Amplify is connected with Github
         </a>
       </header>
     </div>
