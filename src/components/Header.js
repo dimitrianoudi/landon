@@ -1,8 +1,18 @@
-//import { link } from 'global-modules';
-import React from 'react';
-import menuLinksData from '../data/menu_links.json';
+import React, {useState, useEffect} from 'react';
 
 const Header = () => {
+
+	const [menuLinksData, setMenuLinksData] = useState([]);
+
+	const loadMenuLinksData = async() => {
+		const res = await fetch('https://n008ckql3g.execute-api.us-east-1.amazonaws.com/Production/menu-links');
+		let jsonData = await res.json();
+		setMenuLinksData(jsonData);
+	}
+
+	useEffect(() => {
+		loadMenuLinksData();
+	}, []);
 
 	return (
 
